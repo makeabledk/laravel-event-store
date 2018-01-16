@@ -3,9 +3,7 @@
 namespace Makeable\LaravelEventStore\Tests;
 
 use App\User;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use DB;
 use Makeable\LaravelEventStore\EventStoreServiceProvider;
 
 class TestCase extends BaseTestCase

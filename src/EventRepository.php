@@ -13,7 +13,7 @@ class EventRepository
     {
         return $this->saveTags(Event::create([
             'name' => $name ?: get_class($event),
-            'payload' => ($parser = new EventParser($event))->getPayload()
+            'payload' => ($parser = new EventParser($event))->getPayload(),
         ]), $parser->getTags());
     }
 
