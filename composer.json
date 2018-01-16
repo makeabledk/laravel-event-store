@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Makeable\\LaravelEventStore\\Providers\\EventStoreServiceProvider"
+                "Makeable\\LaravelEventStore\\EventStoreServiceProvider"
             ],
             "aliases": {
                 "EventStore": "Makeable\\LaravelEventStore\\EventStoreFacade"
