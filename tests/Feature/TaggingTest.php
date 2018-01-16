@@ -14,7 +14,7 @@ class TaggingTest extends TestCase
     use RefreshDatabase;
 
     /** @test **/
-    function it_recognises_eloquent_models_as_tags()
+    public function it_recognises_eloquent_models_as_tags()
     {
         event(new UserRegistered($user = $this->user()));
 
@@ -23,7 +23,7 @@ class TaggingTest extends TestCase
     }
 
     /** @test **/
-    function it_does_not_tag_none_eloquent_public_properties()
+    public function it_does_not_tag_none_eloquent_public_properties()
     {
         event(new UserRegistered($user = $this->user()));
 

@@ -12,7 +12,7 @@ class StoreTest extends TestCase
     use RefreshDatabase;
 
     /** @test **/
-    function it_stores_dispatched_events_in_database()
+    public function it_stores_dispatched_events_in_database()
     {
         event(new UserRegistered($this->user()));
 
@@ -20,7 +20,7 @@ class StoreTest extends TestCase
     }
 
     /** @test **/
-    function it_serializes_events_correctly()
+    public function it_serializes_events_correctly()
     {
         event(new UserRegistered($user = $this->user()));
 

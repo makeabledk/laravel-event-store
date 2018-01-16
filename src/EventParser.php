@@ -57,6 +57,7 @@ class EventParser
         if ($property instanceof Arrayable) {
             return $property->toArray();
         }
+
         return $property;
     }
 }

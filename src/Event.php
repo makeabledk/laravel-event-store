@@ -20,11 +20,11 @@ class Event extends Model
      * @var array
      */
     protected $casts = [
-        'payload' => 'array'
+        'payload' => 'array',
     ];
 
     /**
-     * Set created at attribute
+     * Set created at attribute.
      */
     public static function boot()
     {
