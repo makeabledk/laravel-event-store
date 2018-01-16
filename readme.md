@@ -1,6 +1,9 @@
 
 # Laravel Event Store
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/makeabledk/laravel-event-store.svg?style=flat-square)](https://packagist.org/packages/makeabledk/laravel-event-store)
+[![Build Status](https://img.shields.io/travis/makeabledk/laravel-event-store/master.svg?style=flat-square)](https://travis-ci.org/makeabledk/laravel-event-store)
+[![StyleCI](https://styleci.io/repos/117670716/shield?branch=master)](https://styleci.io/repos/117670716)
 
 
 **IMPORTANT NOTICE** 
