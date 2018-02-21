@@ -55,6 +55,9 @@ class EventParser
     protected function normalizeProperty($property)
     {
         if ($property instanceof Arrayable) {
+            if ($property instanceof Eloquent) {
+                $property = (clone $property)->setRelations([]); // do not serialize relationships
+            }
             return $property->toArray();
         }
 
