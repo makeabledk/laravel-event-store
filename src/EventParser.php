@@ -44,7 +44,7 @@ class EventParser
     public function getTags()
     {
         return array_filter($this->getProperties(), function ($property) {
-            return $property instanceof Eloquent;
+            return $property instanceof Eloquent && $property->exists;
         });
     }
 
