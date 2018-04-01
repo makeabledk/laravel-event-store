@@ -3,10 +3,10 @@
 namespace Makeable\LaravelEventStore\Tests\Feature;
 
 use App\Events\UserRegistered;
-use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Makeable\LaravelEventStore\Event;
 use Makeable\LaravelEventStore\EventTag;
+use Makeable\LaravelEventStore\Tests\Stubs\User;
 use Makeable\LaravelEventStore\Tests\TestCase;
 
 class TaggingTest extends TestCase

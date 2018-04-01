@@ -15,7 +15,14 @@ class EventStoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations/');
+        if (! class_exists('LaravelEventStoreCreateEventsTable') &&
+            ! class_exists('CreateEventsTable')) {
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_events_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_events_table.php'),
+                __DIR__.'/../database/migrations/create_event_tags_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time() + 1).'_create_event_tags_table.php'),
+            ], 'migrations');
+        }
+
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-event-store.php', 'laravel-event-store');
         $this->publishes([__DIR__.'/../config/laravel-event-store.php' => config_path('laravel-event-store.php')], 'config');
 

@@ -2,18 +2,14 @@
 
 namespace Makeable\LaravelEventStore\Tests;
 
-use App\User;
+use Illuminate\Database\Migrations\Migrator;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Illuminate\Support\Facades\Artisan;
 use Makeable\LaravelEventStore\EventStoreServiceProvider;
+use Makeable\LaravelEventStore\Tests\Stubs\User;
 
 class TestCase extends BaseTestCase
 {
-//    public function setUp()
-//    {
-//        parent::setUp();
-//
-//    }
-
     /**
      * Creates the application.
      *
@@ -28,15 +24,19 @@ class TestCase extends BaseTestCase
         $app = require __DIR__.'/../vendor/laravel/laravel/bootstrap/app.php';
         $app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
         $app->register(EventStoreServiceProvider::class);
+        $app->afterResolving('migrator', function (Migrator $migrator) {
+            $migrator->path(__DIR__.'/migrations/');
+        });
 
         return $app;
     }
 
     /**
+     * @param array $attributes
      * @return User
      */
-    protected function user()
+    protected function user($attributes = [])
     {
-        return factory(User::class)->create();
+        return User::create(factory(\App\User::class)->make($attributes)->getAttributes());
     }
 }
