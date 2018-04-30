@@ -58,6 +58,7 @@ class EventParser
             if ($property instanceof Eloquent) {
                 $property = (clone $property)->setRelations([]); // do not serialize relationships
             }
+
             return $property->toArray();
         }
 
