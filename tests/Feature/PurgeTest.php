@@ -2,9 +2,8 @@
 
 namespace Makeable\LaravelEventStore\Tests\Feature;
 
-use App\Events\UserRegistered;
+use Makeable\LaravelEventStore\Tests\Stubs\UserRegistered;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Makeable\LaravelEventStore\AttributeParser;
 use Makeable\LaravelEventStore\Event;
 use Makeable\LaravelEventStore\EventRepository;
 use Makeable\LaravelEventStore\Tests\Stubs\User;

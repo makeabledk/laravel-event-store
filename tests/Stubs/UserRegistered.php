@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Makeable\LaravelEventStore\Tests\Stubs;
 
 use App\User;
 use Illuminate\Queue\SerializesModels;

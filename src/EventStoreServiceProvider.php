@@ -26,6 +26,10 @@ class EventStoreServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-event-store.php', 'laravel-event-store');
         $this->publishes([__DIR__.'/../config/laravel-event-store.php' => config_path('laravel-event-store.php')], 'config');
 
+        Config::set('laravel-event-store.log',
+            array_merge(Config::get('laravel-event-store.log'), ['Makeable\LaravelEventStore\Tests\Stubs\*'])
+        );
+
         Event::listen(Config::get('laravel-event-store.log'), function ($name, $payload) {
             $this->app->make(EventRepository::class)->save($payload[0], $name);
         });
