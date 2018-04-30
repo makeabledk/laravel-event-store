@@ -32,10 +32,7 @@
     "autoload-dev": {
         "psr-4": {
             "Makeable\\LaravelEventStore\\Tests\\": "tests/"
-        },
-        "classmap": [
-            "tests/stubs"
-        ]
+        }
     },
     "scripts": {
         "test": "./vendor/bin/phpunit",
