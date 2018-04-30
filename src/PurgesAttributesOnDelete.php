@@ -11,7 +11,7 @@ trait PurgesAttributesOnDelete
         static::deleted(function (Model $model) {
             app(EventRepository::class)->purge($model);
 
-            if($fresh = $model->fresh()) {
+            if ($fresh = $model->fresh()) {
                 $model->forceFill($model->toPurgedArray($model->getMutatedAttributes()))->save();
             }
         });

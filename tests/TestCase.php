@@ -4,7 +4,6 @@ namespace Makeable\LaravelEventStore\Tests;
 
 use Illuminate\Database\Migrations\Migrator;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use Illuminate\Support\Facades\Artisan;
 use Makeable\LaravelEventStore\EventStoreServiceProvider;
 use Makeable\LaravelEventStore\Tests\Stubs\User;
 
