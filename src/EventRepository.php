@@ -2,8 +2,6 @@
 
 namespace Makeable\LaravelEventStore;
 
-use Illuminate\Database\Eloquent\Model;
-
 class EventRepository
 {
     /**

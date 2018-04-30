@@ -2,11 +2,11 @@
 
 namespace Makeable\LaravelEventStore\Tests\Feature;
 
-use Makeable\LaravelEventStore\Tests\Stubs\UserRegistered;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Makeable\LaravelEventStore\Event;
 use Makeable\LaravelEventStore\EventRepository;
 use Makeable\LaravelEventStore\Tests\Stubs\User;
+use Makeable\LaravelEventStore\Tests\Stubs\UserRegistered;
 use Makeable\LaravelEventStore\Tests\TestCase;
 
 class PurgeTest extends TestCase

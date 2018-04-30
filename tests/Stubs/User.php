@@ -10,7 +10,7 @@ class User extends \App\User implements Purgable
     use PurgesAttributesOnDelete;
 
     /**
-     * @var Callable
+     * @var callable
      */
     public $purgePolicy;
 
