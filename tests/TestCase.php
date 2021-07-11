@@ -36,6 +36,8 @@ class TestCase extends BaseTestCase
      */
     protected function user($attributes = [])
     {
-        return User::create(factory(\App\User::class)->make($attributes)->getAttributes());
+        return User::create(
+            \App\Models\User::factory()->make($attributes)->getAttributes()
+        );
     }
 }

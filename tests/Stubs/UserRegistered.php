@@ -2,7 +2,6 @@
 
 namespace Makeable\LaravelEventStore\Tests\Stubs;
 
-use App\User;
 use Illuminate\Queue\SerializesModels;
 
 class UserRegistered
@@ -10,7 +9,7 @@ class UserRegistered
     use SerializesModels;
 
     /**
-     * @var User
+     * @var \App\Models\User
      */
     public $user;
 
@@ -29,7 +28,7 @@ class UserRegistered
      *
      * @param User $user
      */
-    public function __construct(User $user)
+    public function __construct(\App\Models\User $user)
     {
         $this->user = $user;
     }

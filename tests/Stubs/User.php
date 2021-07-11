@@ -5,7 +5,7 @@ namespace Makeable\LaravelEventStore\Tests\Stubs;
 use Makeable\LaravelEventStore\Purgable;
 use Makeable\LaravelEventStore\PurgesAttributesOnDelete;
 
-class User extends \App\User implements Purgable
+class User extends \App\Models\User implements Purgable
 {
     use PurgesAttributesOnDelete;
 

@@ -3,6 +3,7 @@
 namespace Makeable\LaravelEventStore\Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Arr;
 use Makeable\LaravelEventStore\Event;
 use Makeable\LaravelEventStore\EventRepository;
 use Makeable\LaravelEventStore\Tests\Stubs\User;
@@ -19,11 +20,12 @@ class PurgeTest extends TestCase
         event(new UserRegistered($user = $this->user()));
 
         $payload = Event::first()->payload['user'];
-        $this->assertArraySubset($user->toArray(), $payload);
+
+        $this->assertEquals($user->toArray(), $payload);
         $this->assertNotNull($payload['name']);
 
         $user->purgePolicy = function ($attributes) {
-            return array_only($attributes, 'id');
+            return Arr::only($attributes, 'id');
         };
 
         app(EventRepository::class)->purge($user);
